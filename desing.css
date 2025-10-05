@@ -1,0 +1,11 @@
+html,body{
+    max-height: 100%;
+}
+.carousel-inner .item img{
+    max-height: 100vh;
+    min-width: auto;
+    margin: 0 auto;
+}
+.carousel-inner {
+    max-height: 100%;
+}
