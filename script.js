@@ -2,7 +2,7 @@ async function getData() {
   try {
     const response = await fetch("https://services.swpc.noaa.gov/json/solar-cycle/observed-solar-cycle-indices.json");
     var data = await response.json();
-    data = data.filter(item => item["time-tag"] >= "2010-01");
+    data = data.filter(item => item["time-tag"] >= "2000-01");
     console.log("Data:", data);
     
     const Rlabels = data.map(item => item["time-tag"]);
@@ -24,11 +24,11 @@ function grafico(Rlabels, valores) {
 
 
     new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: Rlabels,
       datasets: [{
-        label: '# of Votes',
+        label: '#Solar Intensity',
         data: valores,
         borderWidth: 1
       }]
