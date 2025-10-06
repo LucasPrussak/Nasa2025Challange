@@ -5,10 +5,10 @@ async function getData() {
     data = data.filter(item => item["time-tag"] >= "2010-01");
     console.log("Data:", data);
     
-    const labels = data.map(item => item["time-tag"]);
+    const Rlabels = data.map(item => item["time-tag"]);
     const valores = data.map(item => item["ssn"]);
 
-    grafico(labels,valores);
+    grafico(Rlabels,valores);
     
 
   } catch (error) {
@@ -18,13 +18,15 @@ async function getData() {
 
 getData();
 
-function grafico(labels, valores) {
+function grafico(Rlabels, valores) {
     const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
+
+
+    new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: labels,
+      labels: Rlabels,
       datasets: [{
         label: '# of Votes',
         data: valores,
