@@ -9,3 +9,7 @@ html,body{
 .carousel-inner {
     max-height: 100%;
 }
+
+#myChart {
+    margin: 3rem 12rem;
+}
